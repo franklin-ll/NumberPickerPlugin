@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="br.com.codate.numberpicker"
+    version="0.1.1">
+    <name>OlaPlugin</name>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
+  
+    <js-module src="www/numberpicker.js" name="NumberPicker">
+        <clobbers target="window.plugins.np" />
+    </js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+		  <feature name="NumberPicker">
+			<param name="android-package" value="br.com.codate.NumberPicker" />
+		  </feature>
+		</config-file>
+		<source-file src="src/android/br/com/codate/np/NumberPickerPlugin.java" target-dir="src/br/com/codate/numberpicker"/>
+	</platform>
+
+</plugin>
